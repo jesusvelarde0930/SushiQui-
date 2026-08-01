@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Sushi Qui - Sushi de quinoa en Ciudad Obregón. Pedidos por llamada al 644 490 0023.">
+<title>Sushi Qui | Ciudad Obregón</title>
+
+<style>
+:root{
+  --green:#193b2d;
+  --green-soft:#315c49;
+  --cream:#f8f5ee;
+  --gold:#c79b45;
+  --dark:#1c211e;
+  --muted:#6d756f;
+  --white:#fff;
+  --line:#e8e4db;
+  --shadow:0 15px 45px rgba(25,59,45,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  color:var(--dark);
+  background:var(--cream);
+  line-height:1.6;
+}
+img{display:block;width:100%}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+
+/* NAV */
+header{
+  position:sticky;top:0;z-index:50;
+  background:rgba(248,245,238,.96);
+  border-bottom:1px solid var(--line);
+}
+nav{
+  min-height:74px;display:flex;align-items:center;
+  justify-content:space-between;gap:24px;
+}
+.logo{
+  font-size:1.55rem;font-weight:900;letter-spacing:-.5px;
+  color:var(--green);
+}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:30px;font-weight:700;font-size:.95rem}
+.nav-links a:hover{color:var(--gold)}
+.call{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--green);color:#fff;padding:12px 18px;
+  border-radius:7px;font-weight:800;
+}
+.call:hover{background:var(--green-soft)}
+
+/* HERO */
+.hero{
+  min-height:650px;
+  background:
+    linear-gradient(90deg,rgba(12,28,21,.86) 0%,rgba(12,28,21,.62) 48%,rgba(12,28,21,.18) 100%),
+    url("https://images.unsplash.com/photo-1579871494447-9811cf80d66c?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+  display:flex;align-items:center;
+  color:#fff;
+}
+.hero-content{padding:90px 0;max-width:720px}
+.tag{
+  display:inline-block;
+  border:1px solid rgba(255,255,255,.5);
+  padding:7px 13px;border-radius:4px;
+  text-transform:uppercase;font-size:.75rem;
+  letter-spacing:1.5px;font-weight:800;margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(3.2rem,8vw,6.5rem);
+  line-height:.9;letter-spacing:-5px;margin-bottom:25px;
+}
+.hero h1 span{color:#e0b65f}
+.hero p{font-size:1.2rem;max-width:610px;color:#f3f3ef;margin-bottom:30px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero .call{background:#d1a24d;color:#17251d}
+.hero .call:hover{background:#e1b761}
+.menu-btn{
+  border:1px solid rgba(255,255,255,.55);
+  padding:12px 20px;border-radius:7px;font-weight:800;
+}
+
+/* SECTIONS */
+section{padding:90px 0}
+.heading{text-align:center;max-width:700px;margin:0 auto 42px}
+.kicker{
+  color:var(--gold);text-transform:uppercase;
+  font-size:.75rem;font-weight:900;letter-spacing:1.8px;
+}
+.heading h2{
+  font-size:clamp(2.1rem,5vw,3.4rem);
+  color:var(--green);line-height:1.05;margin:10px 0 13px;
+}
+.heading p{color:var(--muted)}
+
+/* MENU */
+.menu-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+}
+.card{
+  background:#fff;border:1px solid var(--line);
+  overflow:hidden;box-shadow:0 8px 25px rgba(25,59,45,.06);
+}
+.card-photo{height:240px;overflow:hidden;background:#ddd}
+.card-photo img{height:100%;object-fit:cover}
+.card-body{padding:22px}
+.card h3{font-size:1.28rem;color:var(--green);margin-bottom:7px}
+.card p{font-size:.92rem;color:var(--muted);min-height:68px}
+.price{
+  display:flex;justify-content:space-between;align-items:center;
+  margin-top:17px;padding-top:14px;border-top:1px solid var(--line);
+}
+.price strong{font-size:1.35rem;color:var(--gold)}
+.price small{color:var(--muted);font-weight:700}
+
+/* FEATURE IMAGE */
+.feature{
+  background:#fff;
+}
+.feature-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:60px;
+}
+.feature-image{height:500px;overflow:hidden}
+.feature-image img{height:100%;object-fit:cover}
+.feature-copy h2{
+  color:var(--green);font-size:clamp(2.2rem,4vw,3.4rem);
+  line-height:1.05;margin:10px 0 18px;
+}
+.feature-copy p{color:var(--muted);font-size:1.05rem;margin-bottom:22px}
+.points{display:grid;gap:13px}
+.point{
+  border-top:1px solid var(--line);
+  padding-top:13px;font-weight:800;color:var(--green);
+}
+.point span{display:block;color:var(--muted);font-weight:400;font-size:.9rem}
+
+/* CTA */
+.cta{
+  background:var(--green);color:#fff;text-align:center;
+}
+.cta h2{font-size:clamp(2.2rem,5vw,4rem);line-height:1;margin-bottom:14px}
+.cta p{color:#dce6e0;margin-bottom:25px}
+.big-phone{
+  display:inline-block;background:#d1a24d;color:#17251d;
+  padding:15px 27px;border-radius:7px;
+  font-size:1.55rem;font-weight:900;
+}
+.city{margin-top:17px;color:#dce6e0;font-weight:700}
+
+/* FOOTER */
+footer{
+  background:#10231a;color:#bfcac3;text-align:center;padding:28px 0;
+}
+footer strong{color:#fff}
+footer p{font-size:.84rem;margin-top:4px}
+
+/* MOBILE */
+@media(max-width:950px){
+  .menu-grid{grid-template-columns:repeat(2,1fr)}
+  .feature-grid{grid-template-columns:1fr;gap:35px}
+  .feature-image{height:420px}
+}
+@media(max-width:620px){
+  .nav-links{display:none}
+  nav{justify-content:space-between}
+  .hero{min-height:600px;background-position:60% center}
+  .hero h1{letter-spacing:-3px}
+  .hero-content{padding:70px 0}
+  .menu-grid{grid-template-columns:1fr}
+  section{padding:65px 0}
+  .card-photo{height:260px}
+  .feature-image{height:340px}
+  .big-phone{font-size:1.25rem}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#inicio" class="logo">SUSHI <span>QUI</span></a>
+      <div class="nav-links">
+        <a href="#menu">Menú</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <a class="call" href="tel:6444900023">☎ Llamar</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="inicio">
+  <div class="container">
+    <div class="hero-content">
+      <span class="tag">Sushi de quinoa · Ciudad Obregón</span>
+      <h1>Sushi <span>Qui</span></h1>
+      <p>
+        Una propuesta diferente de sushi con quinoa, ingredientes frescos
+        y combinaciones pensadas para disfrutar. Conoce nuestro menú y
+        haz tu pedido por teléfono.
+      </p>
+      <div class="hero-actions">
+        <a class="call" href="tel:6444900023">☎ Pedir ahora · 644 490 0023</a>
+        <a class="menu-btn" href="#menu">Ver menú</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="container">
+    <div class="heading">
+      <div class="kicker">Menú Sushi Qui</div>
+      <h2>Cuatro formas de disfrutar la quinoa</h2>
+      <p>
+        Elige tu favorito y llama al <strong>644 490 0023</strong> para realizar tu pedido.
+      </p>
+    </div>
+
+    <div class="menu-grid">
+
+      <article class="card">
+        <div class="card-photo">
+          <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=900&q=85" alt="Sushi servido en plato">
+        </div>
+        <div class="card-body">
+          <h3>Qui Clásico</h3>
+          <p>Quinoa, aguacate, pepino y una combinación fresca de ingredientes de la casa.</p>
+          <div class="price"><strong>$125</strong><small>por rollo</small></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-photo">
+          <img src="https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?auto=format&fit=crop&w=900&q=85" alt="Rollos de sushi frescos">
+        </div>
+        <div class="card-body">
+          <h3>Qui Fresh</h3>
+          <p>Una combinación fresca y ligera con quinoa, vegetales y un toque especial.</p>
+          <div class="price"><strong>$130</strong><small>por rollo</small></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-photo">
+          <img src="https://images.unsplash.com/photo-1563612116625-3012372fccce?auto=format&fit=crop&w=900&q=85" alt="Sushi con presentación de restaurante">
+        </div>
+        <div class="card-body">
+          <h3>Qui Spicy</h3>
+          <p>Quinoa y una combinación con carácter para quienes disfrutan un toque picante.</p>
+          <div class="price"><strong>$135</strong><small>por rollo</small></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-photo">
+          <img src="https://images.unsplash.com/photo-1579968001413-5d2c9a4b9e9b?auto=format&fit=crop&w=900&q=85" alt="Sushi gourmet servido en plato">
+        </div>
+        <div class="card-body">
+          <h3>Qui Especial</h3>
+          <p>Nuestra propuesta especial para quienes buscan una combinación diferente y memorable.</p>
+          <div class="price"><strong>$140</strong><small>por rollo</small></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="feature" id="nosotros">
+  <div class="container feature-grid">
+    <div class="feature-image">
+      <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=85" alt="Ambiente de restaurante">
+    </div>
+    <div class="feature-copy">
+      <div class="kicker">La idea detrás de Sushi Qui</div>
+      <h2>Algo diferente para Ciudad Obregón.</h2>
+      <p>
+        Sushi Qui nace con la idea de ofrecer una alternativa diferente:
+        sushi preparado con quinoa y una presentación moderna, cuidando
+        que cada combinación tenga personalidad y sabor.
+      </p>
+      <div class="points">
+        <div class="point">🌱 Quinoa como protagonista
+          <span>Una alternativa diferente a la preparación tradicional.</span>
+        </div>
+        <div class="point">🥢 Una propuesta moderna
+          <span>Sabores y presentación pensados para disfrutar.</span>
+        </div>
+        <div class="point">📍 Ciudad Obregón
+          <span>Pedidos directamente por teléfono.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <div class="container">
+    <h2>¿Ya elegiste tu Sushi Qui?</h2>
+    <p>Haz tu pedido por llamada y consulta disponibilidad.</p>
+    <a class="big-phone" href="tel:6444900023">644 490 0023</a>
+    <div class="city">📍 Ciudad Obregón, Sonora</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <strong>Sushi Qui</strong>
+    <p>Sushi de quinoa · Ciudad Obregón · Pedidos: 644 490 0023</p>
+    <p>Fotografías de referencia: Unsplash. Las imágenes deben sustituirse por fotos propias de Sushi Qui para representar fielmente cada producto.</p>
+  </div>
+</footer>
+
+</body>
+</html>
